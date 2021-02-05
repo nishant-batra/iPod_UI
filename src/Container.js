@@ -1,11 +1,17 @@
 import React from 'react';
 import './index.css';
+import Screen from './Screen'
 import {fontAwesome} from "react-icons/fa"
 import {FaFastForward, FaFastBackward, FaPause, FaPlay} from "react-icons/fa"
-const Container=()=>{
+const Container=(props)=>{
+const {items}=props;
+
 return(
 <div className="outer-div">
-<div className="inner-div"></div>
+<Screen
+items={items}
+
+/>
 <div className="button-div">
     <button className="buttons" id="menu">MENU</button>
     <button className="buttons" id="fast-forward"><FaFastForward/></button>

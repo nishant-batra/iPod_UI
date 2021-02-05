@@ -18,8 +18,9 @@ code {
   background:#D8D8D4;
   margin:auto;
   top:10vh;
-  border:1px black solid;
+  /* border:1px black solid; */
   border-radius:2rem;
+  -webkit-box-reflect: below 0 linear-gradient( 80deg,transparent, white);
 }
 .inner-div{
   border:5px black solid;
@@ -29,6 +30,7 @@ code {
   height:45%;
   top:5%;
   border-radius:0.8rem;
+  background-image:url('https://www.popsci.com/resizer/QgEMm6gNVXFYEFCmonq-Tp9_D7g=/760x506/cloudfront-us-east-1.images.arcpublishing.com/bonnier/3NIEQB3SFVCMNHH6MHZ42FO6PA.jpg');
 }
 .button-div{
   position:absolute;
@@ -72,4 +74,30 @@ top:150px;
   left:75px;
   top:70px;
 
+  
+}
+.border-08{
+  border-bottom-left-radius: 0.8rem;
+}
+.screen-item{
+  position: relative;
+  border-top:1px solid grey;
+  width:200px;
+  padding:20px;
+  top:-45px;
+  
+}
+.main-heading{
+  position:relative;
+  width:240px;
+background:white;
+top:-23px;
+border-top-left-radius: 0.8rem;
+height: 90px;
+
+vertical-align: middle;
+}
+.screen-item span{
+  position:absolute;
+  left:90%;
 }
