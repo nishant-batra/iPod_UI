@@ -30,6 +30,28 @@ class App extends React.Component {
       ]
     }
   }
+//   handleanglechange=(angle)=>{
+//     const {items}=this.state;
+   
+//       console.log(items);
+    
+// if(angle==1)
+// {
+// i=(i+1)%4;
+// }
+// else
+// if(angle==-1)
+// {
+//   i=i-1;
+//   if(i==-1)
+//   i=3;
+// }
+// items[i].selected=1;
+// this.setState({
+//   items
+// }
+// );
+  //}
   render()
   {
     const {items}=this.state;
@@ -37,6 +59,7 @@ class App extends React.Component {
   return (
     <div className="App">
      <Container items={items}
+     //onAngleChange={this.handleanglechange}
    />
     </div>
   );

@@ -10,6 +10,7 @@ return(
 {items.map((item)=>{
     // console.log(item.key);
 return <ScreenItems item={item}
+
 key={item.key}>
 
 </ScreenItems>
