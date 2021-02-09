@@ -27,31 +27,69 @@ class App extends React.Component {
 
         }
               
-      ]
+      ],
     }
+    this.centerx=708;
+    this.centery=670;
+    this.i=0;
   }
-//   handleanglechange=(angle)=>{
-//     const {items}=this.state;
-   
-//       console.log(items);
-    
-// if(angle==1)
-// {
-// i=(i+1)%4;
-// }
-// else
-// if(angle==-1)
-// {
-//   i=i-1;
-//   if(i==-1)
-//   i=3;
-// }
-// items[i].selected=1;
-// this.setState({
-//   items
-// }
-// );
-  //}
+  handleclick=(e)=>{
+    console.log(e.clientX);
+    this.i=1;
+    this.initialX=e.clientX;
+    this.initialY=e.clientY;
+   }
+    handlemousemove=(e)=>{
+       if(this.i!=1)
+       return;
+   //     console.log(e.clientX,e.clientY);
+   //     let pos=(initialX-e.clientX)+(initialY-e.clientY);
+    let iangle=Math.atan2(this.initialX-this.centerx,this.initialY-this.centery);
+    let nangle=Math.atan2(e.clientX-this.centerx,e.clientY-this.centery);
+   if(nangle-iangle>0.5)
+   {
+this.initialY=e.clientY;
+this.initialX=e.clientX;
+this.handleanlgechange(-1);
+   }
+   else
+   if(nangle-iangle<-0.5)
+   {
+       this.initialY=e.clientY;
+this.initialX=e.clientX;
+this.handleanlgechange(1);
+   }
+
+   }
+   handlemouseup=(e)=>{
+       this.i=0;
+       return;
+   }
+ handleanlgechange=(angle)=>{
+const {items}=this.state;
+  let index=0;
+  for(index;index<items.length;index++)
+  {
+    if(items[index].selected===1)
+    break;
+  }
+  items[index].selected=0;
+  if(angle===1)
+  index=(index+1)%4;
+  else
+  {
+    if(index===0)
+    index=3;
+    else
+    index--;
+  }
+  items[index].selected=1;
+  this.setState({
+    items
+  });
+  
+  
+ }
   render()
   {
     const {items}=this.state;
@@ -59,7 +97,10 @@ class App extends React.Component {
   return (
     <div className="App">
      <Container items={items}
-     //onAngleChange={this.handleanglechange}
+     onMD={this.handleclick}
+     onMM={this.handlemousemove}
+     onMU={this.handlemouseup}
+     
    />
     </div>
   );

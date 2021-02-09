@@ -12,7 +12,10 @@ items={items}
 
 />
 <ButtonDiv 
-//onAngleChange={props.onAngleChange}
+onMD={props.onMD}
+onMM={props.onMM}
+onMU={props.onMU}
+
 />
 
 </div>
