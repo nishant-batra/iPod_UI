@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Container from './Container'
+
 class App extends React.Component {
   constructor(){
     super();
@@ -32,6 +33,9 @@ class App extends React.Component {
     this.centerx=708;
     this.centery=670;
     this.i=0;
+    this.display=[
+      0, 0, 0, 0, 1
+      ]
   }
   handleclick=(e)=>{
     console.log(e.clientX);
@@ -46,14 +50,14 @@ class App extends React.Component {
    //     let pos=(initialX-e.clientX)+(initialY-e.clientY);
     let iangle=Math.atan2(this.initialX-this.centerx,this.initialY-this.centery);
     let nangle=Math.atan2(e.clientX-this.centerx,e.clientY-this.centery);
-   if(nangle-iangle>0.5)
+   if(nangle-iangle>0.25)
    {
 this.initialY=e.clientY;
 this.initialX=e.clientX;
 this.handleanlgechange(-1);
    }
    else
-   if(nangle-iangle<-0.5)
+   if(nangle-iangle<-0.25)
    {
        this.initialY=e.clientY;
 this.initialX=e.clientX;
@@ -87,12 +91,42 @@ const {items}=this.state;
   this.setState({
     items
   });
+}
+  handleSelect=()=>{
+    const {items}=this.state;
+    let index=0;
+  for(index;index<items.length;index++)
+  {
+    if(items[index].selected===1)
+    break;
+  }
+  for (let k in this.display)
+  {
+    this.display[k]=0;
+  }
+  this.display[index]=1;
+this.setState({
+  items,
+});
+  }
+menuSelect=()=>{
+  const{items}=this.state;
+  for (let k in this.display)
+  {
+    this.display[k]=0;
+  }
+  this.display[4]=1;
+  this.setState({
+    items,
+  })
+}
   
   
- }
+ 
   render()
   {
     const {items}=this.state;
+    
  
   return (
     <div className="App">
@@ -100,9 +134,15 @@ const {items}=this.state;
      onMD={this.handleclick}
      onMM={this.handlemousemove}
      onMU={this.handlemouseup}
+     onSelect={this.handleSelect}
+     menuClick={this.menuSelect}
+     display={this.display}
      
    />
+  
+  
     </div>
+      
   );
   }
  

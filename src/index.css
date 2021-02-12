@@ -43,27 +43,31 @@ code {
  
 }
 .buttons{
-  position:relative;
+  position:absolute;
   border:none;
   background:none;
   color:#D8D8D4;
   font-size:2.5rem;
+  /* border:1px solid black; */
 }
 #menu{
  top:10px;
   left:115px;
+  -webkit-user-select: none;
 }
 #fast-forward{
-left:160px;
+left:290px;
 top:150px;
 }
 #fast-backward{
   top:150px;
-  left:-170px;
+  left:15px;
 }
 #pause{
-  top:290px;
-  left:-95px;
+  top:280px;
+  left:130px;
+  -webkit-user-select: none;
+  z-index:1;
 }
 .greyspace{
   position:absolute;

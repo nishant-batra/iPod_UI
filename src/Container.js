@@ -9,13 +9,14 @@ return(
 <div className="outer-div">
 <Screen
 items={items}
-
+display={props.display}
 />
 <ButtonDiv 
 onMD={props.onMD}
 onMM={props.onMM}
 onMU={props.onMU}
-
+onSelect={props.onSelect}
+menuClick={props.menuClick}
 />
 
 </div>
