@@ -1,8 +1,19 @@
 import React from 'react';
-const Music=()=>{
+import MusicItems from './MusicItems';
+const Music=(props)=>{
+    
+  
 return (
-    <div>
-        <h1>Music</h1>
+    
+    <div >
+{props.music.map((item)=>{
+    
+return <MusicItems music={item}
+
+key={item.key}/>
+
+})
+}
     </div>
 )
 }

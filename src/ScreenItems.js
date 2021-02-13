@@ -2,10 +2,10 @@ import React from 'react';
  import './index.css';
 const ScreenItems=(props)=>{
 const {title,selected}=props.item;
-console.log(title,selected);
+
 let bgcol='white';
 let br=0;
-if(title=="Settings")
+if(title==="Settings")
 br=1;
 if(selected)
 {

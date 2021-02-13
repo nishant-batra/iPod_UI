@@ -29,6 +29,25 @@ class App extends React.Component {
         }
               
       ],
+      music:[
+        {
+          title:"All Songs",
+          selected:1,
+          key:4
+        },
+        {
+          title:"Artists",
+          selected:0,
+          key:5,
+        },
+        {
+          title:"Playlists",
+          selected:0,
+          key:6,
+        }
+
+
+      ]
     }
     this.centerx=708;
     this.centery=670;
@@ -38,30 +57,30 @@ class App extends React.Component {
       ]
   }
   handleclick=(e)=>{
-    console.log(e.clientX);
+ 
     this.i=1;
     this.initialX=e.clientX;
     this.initialY=e.clientY;
    }
     handlemousemove=(e)=>{
-       if(this.i!=1)
+       if(this.i!==1)
        return;
-   //     console.log(e.clientX,e.clientY);
-   //     let pos=(initialX-e.clientX)+(initialY-e.clientY);
-    let iangle=Math.atan2(this.initialX-this.centerx,this.initialY-this.centery);
-    let nangle=Math.atan2(e.clientX-this.centerx,e.clientY-this.centery);
-   if(nangle-iangle>0.25)
+  
+    let iangle=Math.atan2(this.initialY-this.centery,this.initialX-this.centerx)*180/Math.PI;
+    let nangle=Math.atan2(e.clientY-this.centery,e.clientX-this.centerx)*180/Math.PI;
+  
+   if(nangle-iangle>20)
    {
 this.initialY=e.clientY;
 this.initialX=e.clientX;
-this.handleanlgechange(-1);
+this.handleanlgechange(1);
    }
    else
-   if(nangle-iangle<-0.25)
+   if(nangle-iangle<-20)
    {
        this.initialY=e.clientY;
 this.initialX=e.clientX;
-this.handleanlgechange(1);
+this.handleanlgechange(-1);
    }
 
    }
@@ -70,6 +89,8 @@ this.handleanlgechange(1);
        return;
    }
  handleanlgechange=(angle)=>{
+   if(this.display[4]===1)
+   {
 const {items}=this.state;
   let index=0;
   for(index;index<items.length;index++)
@@ -92,9 +113,34 @@ const {items}=this.state;
     items
   });
 }
-  handleSelect=()=>{
+else{
+  const {music}=this.state;
+  let index=0;
+  for(index;index<music.length;index++)
+  {
+    if(music[index].selected===1)
+    break;
+  }
+  music[index].selected=0;
+  if(angle===1)
+  index=(index+1)%3;
+  else
+  {
+    if(index===0)
+    index=2;
+    else
+    index--;
+  }
+ music[index].selected=1;
+  this.setState({
+    music
+  });
+}
+}
+  handleSelect=(e)=>{
     const {items}=this.state;
     let index=0;
+ 
   for(index;index<items.length;index++)
   {
     if(items[index].selected===1)
@@ -125,7 +171,7 @@ menuSelect=()=>{
  
   render()
   {
-    const {items}=this.state;
+    const {items,music}=this.state;
     
  
   return (
@@ -137,7 +183,7 @@ menuSelect=()=>{
      onSelect={this.handleSelect}
      menuClick={this.menuSelect}
      display={this.display}
-     
+     music={music}
    />
   
   

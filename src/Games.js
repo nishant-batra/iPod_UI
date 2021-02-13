@@ -1,7 +1,10 @@
 import React from 'react';
+import {FaGamepad} from "react-icons/fa";
 const Games=()=>{
+
 return (
-    <div>
+    <div id="settings">
+        <h1 id="cogs"><FaGamepad color="grey"/></h1>
         <h1>Games</h1>
     </div>
 )

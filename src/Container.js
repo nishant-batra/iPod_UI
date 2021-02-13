@@ -10,6 +10,7 @@ return(
 <Screen
 items={items}
 display={props.display}
+music={props.music}
 />
 <ButtonDiv 
 onMD={props.onMD}

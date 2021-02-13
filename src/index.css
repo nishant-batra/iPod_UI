@@ -21,6 +21,7 @@ code {
   /* border:1px black solid; */
   border-radius:2rem;
   -webkit-box-reflect: below 0 linear-gradient( 80deg,transparent, white);
+  box-shadow: 0 0 20px 1px black inset;
 }
 .inner-div{
   border:5px black solid;
@@ -30,6 +31,9 @@ code {
   height:45%;
   top:5%;
   border-radius:0.8rem;
+ 
+}
+.background-img{
   background-image:url('https://www.popsci.com/resizer/QgEMm6gNVXFYEFCmonq-Tp9_D7g=/760x506/cloudfront-us-east-1.images.arcpublishing.com/bonnier/3NIEQB3SFVCMNHH6MHZ42FO6PA.jpg');
 }
 .button-div{
@@ -104,4 +108,53 @@ vertical-align: middle;
 .screen-item span{
   position:absolute;
   left:90%;
+}
+.white-bg{
+  background: white;
+}
+#settings{
+  position: absolute;
+  height:100%;
+  width:100%;
+  border:1px black solid;
+  text-align:center;
+}
+#settings h1{
+  position: relative;
+  font-size:4rem;
+  margin:0;
+  top:40px;
+}
+#cogs{
+  font-size: 7rem  !important;
+}
+#coverflow{
+  
+  top:100px  !important;
+}
+.music-item{
+  position: relative;
+  border-top:1px solid grey;
+  width:200px;
+  padding:20px;
+  top:0px;
+  height:71px;
+  vertical-align: middle;
+  
+}
+.v-middle{
+  position: relative;
+  font-size: 1rem;
+top:25px !important;
+}
+.music-item span{
+  position:absolute;
+  left:90%;
+  top:45px;
+}
+.background-img-music{
+  background-image: url('https://images.pexels.com/photos/3721941/pexels-photo-3721941.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+}
+.border-08-tl{
+border-top-left-radius: 0.8rem;
 }

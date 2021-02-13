@@ -1,8 +1,8 @@
 import React from 'react';
 const CoverFlow=()=>{
 return (
-    <div>
-        <h1>CoverFlow</h1>
+    <div id="settings">
+        <h1 id="coverflow">CoverFlow</h1>
     </div>
 )
 }
