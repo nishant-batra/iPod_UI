@@ -5,7 +5,7 @@ import Music from './Music'
 import Games from './Games'
 import Settings from './Settings'
 const Screen=(props)=>{
-
+// Determines what to display on the inner screen based on the selection made
 const {items,display}=props;
 
 if(display[4]===1)
@@ -15,7 +15,7 @@ return(
  <div className="inner-div background-img">
         <h1 className="main-heading">Ipod.js</h1>
 {items.map((item)=>{
-    // console.log(item.key);
+    
 return <ScreenItems item={item}
 
 key={item.key}>

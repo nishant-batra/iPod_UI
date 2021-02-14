@@ -2,6 +2,7 @@ import React from 'react';
 import './index.css';
 import Screen from './Screen'
 import ButtonDiv from './ButtonDiv'
+// The outer render of the ipod
 const Container=(props)=>{
 const {items}=props;
 

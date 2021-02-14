@@ -1,5 +1,6 @@
 import React from 'react';
 import {FaGamepad} from "react-icons/fa";
+//for the games menu
 const Games=()=>{
 
 return (

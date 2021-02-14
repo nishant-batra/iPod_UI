@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import {FaFastForward, FaFastBackward, FaPause, FaPlay} from "react-icons/fa";
+//The set of buttons on ipod.js
 const ButtonDiv =(props)=> {
    
     

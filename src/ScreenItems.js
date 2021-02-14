@@ -1,5 +1,6 @@
 import React from 'react';
  import './index.css';
+ // renders the screen items for the defualt screen
 const ScreenItems=(props)=>{
 const {title,selected}=props.item;
 

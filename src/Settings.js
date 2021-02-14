@@ -1,5 +1,6 @@
 import React from 'react';
 import {FaCogs} from "react-icons/fa";
+// settings menu screen
 const Settings=()=>{
 return (
     <div id="settings">

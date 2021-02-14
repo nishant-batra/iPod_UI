@@ -56,12 +56,14 @@ class App extends React.Component {
       0, 0, 0, 0, 1
       ]
   }
+  //handles the click for gesture Wheel
   handleclick=(e)=>{
  
     this.i=1;
     this.initialX=e.clientX;
     this.initialY=e.clientY;
    }
+   //handles mouse move on the gesture wheel
     handlemousemove=(e)=>{
        if(this.i!==1)
        return;
@@ -69,14 +71,14 @@ class App extends React.Component {
     let iangle=Math.atan2(this.initialY-this.centery,this.initialX-this.centerx)*180/Math.PI;
     let nangle=Math.atan2(e.clientY-this.centery,e.clientX-this.centerx)*180/Math.PI;
   
-   if(nangle-iangle>20)
+   if(nangle-iangle>15)
    {
 this.initialY=e.clientY;
 this.initialX=e.clientX;
 this.handleanlgechange(1);
    }
    else
-   if(nangle-iangle<-20)
+   if(nangle-iangle<-15)
    {
        this.initialY=e.clientY;
 this.initialX=e.clientX;
@@ -84,10 +86,13 @@ this.handleanlgechange(-1);
    }
 
    }
+   //handles mouse up on the gesture wheel
    handlemouseup=(e)=>{
        this.i=0;
        return;
    }
+   // Determines whether to go up or down in the selection menu
+   //for both the main screen and the music subscreen 
  handleanlgechange=(angle)=>{
    if(this.display[4]===1)
    {
@@ -137,6 +142,7 @@ else{
   });
 }
 }
+//handles the click on the grey area between the buttons for selection
   handleSelect=(e)=>{
     const {items}=this.state;
     let index=0;
@@ -155,6 +161,7 @@ this.setState({
   items,
 });
   }
+  //handles the click on the MENU button
 menuSelect=()=>{
   const{items}=this.state;
   for (let k in this.display)

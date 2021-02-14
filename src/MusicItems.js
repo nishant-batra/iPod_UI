@@ -1,4 +1,5 @@
 import React from "react";
+//Returns the items on the music screen
 const MusicItems=(props)=>{
     const {title,selected}=props.music;
     let bgcol='white';
