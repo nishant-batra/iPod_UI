@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/iPod_UI/static/css/main.bd2ac494.css",
+    "main.js": "/iPod_UI/static/js/main.532418c6.js",
+    "index.html": "/iPod_UI/index.html",
+    "main.bd2ac494.css.map": "/iPod_UI/static/css/main.bd2ac494.css.map",
+    "main.532418c6.js.map": "/iPod_UI/static/js/main.532418c6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bd2ac494.css",
+    "static/js/main.532418c6.js"
+  ]
+}
